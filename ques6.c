@@ -1,22 +1,18 @@
-//Write a program to generate the Fibonacci series up ton terms using recursion.
+#include <stdio.h>
+#include <string.h>
 
-#include<stdio.h>
-int fib(int n);
-int main(){
-    printf("%d",fib(6));
+
+int main() {char str3[] = "Hello";
+    char str4[] = "World";
+    char concatStr2[20];
+    int i, j;
+    for (i = 0; str3[i] != '\0'; ++i) {
+        concatStr2[i] = str3[i];
+    }
+    for (j = 0; str4[j] != '\0'; ++j) {
+        concatStr2[i + j] = str4[j];
+    }
+    concatStr2[i + j] = '\0';
+    printf("String concatenation using character array: %s\n", concatStr2);
     return 0;
 }
-int fib(int n){
-        if(n==0){
-            return 0;
-        }
-        if(n==1){
-            return 1;
-        }
-    
-    int fibnm1=fib(n-1);
-    int fibnm2=fib(n-2);
-    int fibn=fibnm1+fibnm2;
-   // printf("fib of %dis %d",n,fibn);
-    return fibn;
-    }

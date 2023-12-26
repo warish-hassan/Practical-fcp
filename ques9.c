@@ -1,21 +1,40 @@
-//Write a program to implement linear search in a 1-D array.
-
 #include <stdio.h>
+#include <string.h>
 
-int search(int arr[], int n, int x) {
-
-  for (int i = 0; i < n; i++)
-    if (arr[i] == x)
-      return i;
-  return -1;
-}
+// Structure to represent student data
+struct Student {
+    char name[50];
+    int rollNo;
+    char gender;
+};
 
 int main() {
-  int arr[] = {2, 4, 0, 1, 9};
-  int x = 5;
-  int n = sizeof(arr) / sizeof(arr[0]);
+    
+    struct Student studentData;
+    strcpy(studentData.name, "John Doe");
+    studentData.rollNo = 12345;
+    studentData.gender = 'M';
 
-  int result = search(arr, n, x);
+    
+    FILE *file = fopen("student_data.txt", "w");
 
-  (result == -1) ? printf("Element not found") : printf("Element found at index: %d", result);
+    if (file != NULL) {
+        
+        fprintf(file, "One line about myself: Hello, I am a C programmer.\n");
+
+        
+        fprintf(file, "\nStudent Data:\n");
+        fprintf(file, "Name: %s\n", studentData.name);
+        fprintf(file, "Roll No: %d\n", studentData.rollNo);
+        fprintf(file, "Gender: %c\n", studentData.gender);
+
+        
+        fclose(file);
+
+        printf("File created successfully with student data.\n");
+    } else {
+        printf("Error opening the file.\n");
+    }
+
+    return 0;
 }

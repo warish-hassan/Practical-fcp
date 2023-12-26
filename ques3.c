@@ -1,18 +1,16 @@
-// reverse a string without using library functions
-#include<stdio.h>
-#include<string.h>
-int main(){
-    char str[100],newstr[100];
-    int i,j,len;
-    printf("enter your string");
-    gets(str);
-    j=0;
-    len=strlen(str);
-    for(i=len-1;i>=0;i--){
-        newstr[j++]=str[i];
-    }
-    newstr[i] = '\0';
-  	printf("\n String after Reversing = %s", newstr); 	
-  	return 0;
+#include <stdio.h>
+#include <string.h>
 
-}
+
+int main() {
+    // Scenario 1: Using string library
+
+    // String comparison
+    char str1[] = "Hello";
+    char str2[] = "World";
+    // String reversal
+    char reverseStr[20];
+    strcpy(reverseStr, str1);
+    strrev(reverseStr);
+    printf("String reversal using library: %s\n", reverseStr);
+    return 0;}
